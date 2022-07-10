@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Fav-Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./favicon_io/site.webmanifest">
+
+    <!-- Font-awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Order placed</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            letter-spacing: 1px;
+            overflow-x: hidden;
+            background-image: url("./../static/Images/11.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #00000083;
+            background-blend-mode: color;
+            padding: 2rem;
+
+        }
+
+        .pre_loader {
+            position: fixed;
+            z-index: 99;
+            width: 100%;
+            height: 100vh;
+            background: rgb(255, 255, 255) url("./../static/Images/spinner.gif") no-repeat center;
+        }
+
+        .container {
+            background-color: aliceblue;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 3px 12px rgba(99, 99, 99, 0.699);
+            max-width: 760px;
+
+        }
+
+        .thankyou {
+            font-size: 1.5rem;
+        }
+
+        .order-id {
+            font-size: 1.1rem;
+        }
+
+        .continue-btn {
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            background-color: rgb(62, 162, 177);
+            color: white;
+            transition: ease-in-out .3s;
+            box-shadow: 0px 2px 12px rgba(85, 85, 85, 0.662);
+        }
+
+        .continue-btn:hover {
+
+            background-color: rgba(11, 138, 158, 0.963);
+        }
+    </style>
+</head>
+
+
+
+
+
+<body onload="preLoaderFunction()">
+
+    <!-- Pre loader -->
+    <div class="pre_loader"></div>
+
+
+    <div class="container ">
+        <div class="row text-center">
+            <div class="col-md-6 mx-auto">
+                <h3 class=" mb-4">YOUR QUESTION HAS BEEN REGISTERED.</h3>
+                <img style="width: 4rem;" src="./../static/Images/tick mark.png" class="img-fluid tick-mark" alt="">
+                <p class="mt-3 thankyou">Thank you for your purchase. </p>
+                <p class="order-id ">Your order ID is :<span>{{oid}}</span> </p>
+                <a href="/orders"><button class="continue-btn mt-2">Continue</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let pre_loader = document.querySelector(".pre_loader");
+        function preLoaderFunction() {
+            pre_loader.style.display = "none";
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
